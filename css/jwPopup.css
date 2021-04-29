@@ -1,0 +1,55 @@
+.jwPopup-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+}
+.jwPopup-container:not(.show){
+    opacity:0;
+}
+.jwPopup-container.show{
+    transition: opacity .15s linear;
+    display:block;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.jwPopup-dialog{
+    transition: -webkit-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+    -webkit-transform: translate(0,-50px);
+    transform: translate(0,-50px);
+}
+.jwPopup-container.show > .jwPopup-dialog{
+    -webkit-transform: none;
+    transform: none;
+    z-index: 1050;
+}
+.jwPopup-dialog {
+    position: relative;
+    width: auto;
+    margin: .5rem;
+}
+@media (min-width: 576px) {
+    .jwPopup-dialog{
+        max-width: 500px;
+        margin: 1.75rem auto;
+    }
+}
+.jwPopup-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+}
+.jwPopup-container.show > .jwPopup-background{
+    opacity: .5;
+}
