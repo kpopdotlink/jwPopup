@@ -92,4 +92,11 @@ window.onload = function(){
     for(var i=0;i<jwPopupIdList.length;i++){
         document.getElementById(jwPopupIdList[i]).jwPopup();
     }
+    var jwPopupOpenList = document.getElementsByClassName("jwPopupOpen");
+    for(var i=0;i<jwPopupOpenList.length;i++){
+        jwPopupOpenList[i].addEventListener("click",function(e){
+            var element_id = e.currentTarget.getAttribute("jw-target");
+            document.getElementById(element_id).jwPopup('show');
+        });
+    }
 }
