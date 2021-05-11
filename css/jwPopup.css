@@ -18,6 +18,7 @@
     overflow-x:hidden;
     overflow-y:auto;
 }
+/*
 .jwPopup-dialog{
     transition: -webkit-transform .3s ease-out;
     transition: transform .3s ease-out;
@@ -30,17 +31,8 @@
     transform: none;
     z-index: 1050;
 }
-.jwPopup-dialog {
-    position: relative;
-    width: auto;
-    margin: .5rem;
-}
-@media (min-width: 576px) {
-    .jwPopup-dialog{
-        max-width: 500px;
-        margin: 1.75rem auto;
-    }
-}
+*/
+
 .jwPopup-background{
     position: fixed;
     top: 0;
@@ -52,4 +44,121 @@
 }
 .jwPopup-container.show > .jwPopup-background{
     opacity: .5;
+}
+.jwPopup{
+    background-color: #Fff;
+    position:relative;
+    top: 50%;
+    transform: translate(0,-50%);
+    margin: 0 auto;
+    z-index: 1050;
+    border-radius: 5px;
+    letter-spacing: -1px;
+}
+.jwPopup-small-width{
+    max-width: 350px;
+}
+.jwPopup-medium-width{
+    max-width: 650px;
+}
+.jwPopup-large-width{
+    max-width: 950px;
+}
+@media(max-width:694px){
+    .jwPopup-medium-width{
+        margin: 0 20px;
+    }
+}
+@media(max-width:950px){
+    .jwPopup-large-width{
+        margin: 0 20px;
+    }
+}
+.jw-popup-btn{
+    padding: 5px 10px;
+    border: 1px solid #dcdcdc;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 5px;
+}
+.jwPopupHeader{
+    position: relative;
+    background-color: #0e8cf9;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.jwPopupHeaderTitle{
+    display: inline-block;
+    /* border-bottom: 1px solid #000; */
+    font-size: 17px;
+    letter-spacing: -1px;
+    color:#fff;
+}
+button.jw-popup-close{
+    position: absolute;
+    right: 5px;
+    border:none;
+    background: none;
+    cursor: pointer;
+}
+.jwPopup-small-width .jwPopupBody{
+    padding: 15px;
+    height: auto;
+    max-height: 400px;
+    overflow: auto;
+}
+.jwPopup-medium-width .jwPopupBody{
+    padding: 15px;
+    height: auto;
+    max-height: 600px;
+    overflow: auto;
+}
+.jwPopup-large-width .jwPopupBody{
+    padding: 15px;
+    height: auto;
+    max-height: 700px;
+    overflow: auto;
+}
+.jwPopupFormCol{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.jwPopupFormInput input{
+    width: 100%;
+    box-sizing: border-box;
+    padding:7px;
+    box-shadow: 3px 3px 5px rgb(86 86 86 / 10%);
+    border: 1px solid #e0e0e0;
+    margin-bottom: 9px;
+}
+.jwPopupFormInput input:focus{
+    outline: none;
+}
+.jwPopupFooter{
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+}
+.jwPopupFooter .jw-footer-btn{
+    margin:0 auto;
+}
+.jwPopupFooter .jw-footer-btn button{
+    padding: 6px 20px;
+    margin: 0 1px;
+    border-radius: 2px;
+    border: 0;
+    font-size:12px;
+}
+.jwPopupFooter .jw-footer-btn .jwPopupCancel{
+    background-color: rgb(104, 104, 104);
+    color: #fff;
+}
+.jwPopupFooter .jw-footer-btn .jwPopupOK{
+    background-color: rgb(0, 111, 214);
+    color: #fff;
+}
+.jwPopupFooter .jw-footer-btn .jwPopupClose{
+    background-color: rgb(240, 12, 80);
+    color: #fff;
 }
