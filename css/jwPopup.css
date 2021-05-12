@@ -81,14 +81,14 @@
     margin: 10px;
     border-radius: 5px;
 }
-.jwPopupHeader{
+.jw-popup-header{
     position: relative;
     background-color: #0e8cf9;
     padding: 10px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
-.jwPopupHeaderTitle{
+.jw-popup-header-title{
     display: inline-block;
     /* border-bottom: 1px solid #000; */
     font-size: 17px;
@@ -102,29 +102,29 @@ button.jw-popup-close{
     background: none;
     cursor: pointer;
 }
-.jwPopup-small-width .jwPopupBody{
+.jwPopup-small-width .jw-popup-body{
     padding: 15px;
     height: auto;
     max-height: 400px;
     overflow: auto;
 }
-.jwPopup-medium-width .jwPopupBody{
+.jwPopup-medium-width .jw-popup-body{
     padding: 15px;
     height: auto;
     max-height: 600px;
     overflow: auto;
 }
-.jwPopup-large-width .jwPopupBody{
+.jwPopup-large-width .jw-popup-body{
     padding: 15px;
     height: auto;
     max-height: 700px;
     overflow: auto;
 }
-.jwPopupFormCol{
+.jw-popup-FormCol{
     font-size: 14px;
     margin-bottom: 10px;
 }
-.jwPopupFormInput input{
+.jw-popup-FormInput input{
     width: 100%;
     box-sizing: border-box;
     padding:7px;
@@ -132,33 +132,33 @@ button.jw-popup-close{
     border: 1px solid #e0e0e0;
     margin-bottom: 9px;
 }
-.jwPopupFormInput input:focus{
+.jw-popup-FormInput input:focus{
     outline: none;
 }
-.jwPopupFooter{
+.jw-popup-footer{
     padding: 15px;
     text-align: center;
     border-top: 1px solid #eaeaea;
 }
-.jwPopupFooter .jw-footer-btn{
+.jw-popup-footer .jw-footer-btn{
     margin:0 auto;
 }
-.jwPopupFooter .jw-footer-btn button{
+.jw-popup-footer .jw-footer-btn button{
     padding: 6px 20px;
     margin: 0 1px;
     border-radius: 2px;
     border: 0;
     font-size:12px;
 }
-.jwPopupFooter .jw-footer-btn .jwPopupCancel{
+.jw-popup-footer .jw-footer-btn .jw-popup-cancel{
     background-color: rgb(104, 104, 104);
     color: #fff;
 }
-.jwPopupFooter .jw-footer-btn .jwPopupOK{
+.jw-popup-footer .jw-footer-btn .jw-popup-ok{
     background-color: rgb(0, 111, 214);
     color: #fff;
 }
-.jwPopupFooter .jw-footer-btn .jwPopupClose{
+.jw-popup-footer .jw-footer-btn .jw-popup-close{
     background-color: rgb(240, 12, 80);
     color: #fff;
 }
