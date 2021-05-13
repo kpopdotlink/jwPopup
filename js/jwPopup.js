@@ -81,7 +81,7 @@ Element.prototype.jwPopup = function(options){
         }
     }
 }
-window.onload = function(){
+window.addEventListener("load",function(){
     var jwPopupList = document.getElementsByClassName("jwPopup");
     var jwPopupIdList = [];
     for(var i=0;i<jwPopupList.length;i++){
@@ -99,4 +99,4 @@ window.onload = function(){
             document.getElementById(element_id).jwPopup('show');
         });
     }
-}
+});
