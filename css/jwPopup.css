@@ -162,3 +162,6 @@ button.jw-popup-close{
     background-color: rgb(240, 12, 80);
     color: #fff;
 }
+.jw-alert-txt{
+    font-size: 13px;
+} 
