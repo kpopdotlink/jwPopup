@@ -8,6 +8,8 @@
     overflow: hidden;
     outline: 0;
     transition: visibility 0s, opacity .15s linear;
+    padding:0;
+    margin:0;
 }
 .jwPopup-container:not(.show){
     opacity:0;

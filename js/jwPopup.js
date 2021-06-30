@@ -11,17 +11,7 @@ Element.prototype.jwPopup = function(options){
             var $jwPopup_background = document.createElement("div");
             $jwPopup_background.setAttribute("id",jwPopup_background_id);
             $jwPopup_background.classList.add("jwPopup-background");
-            $jwPopup_background.addEventListener("click",function(e){
-                if(e.currentTarget.classList.contains("jwPopup-background")){
-                    document.getElementById(element_id).jwPopup("hide");
-                }
-            });
-            var jwPopupCloseList = $el.getElementsByClassName("jwPopupClose");
-            for(var i=0;i<jwPopupCloseList.length;i++){
-                jwPopupCloseList[i].addEventListener("click",function(e){
-                    document.getElementById(element_id).jwPopup("hide");
-                });
-            }
+            
             $el.classList.add("jwPopup-dialog","jwPopup-setted");
 
             $jwPopup_container.appendChild($el);
@@ -32,14 +22,62 @@ Element.prototype.jwPopup = function(options){
             console.error("jwPopup was unable to create DOM with ids: "+jwPopup_background_id+","+jwPopup_containder_id);
         }
     }
+    if(!$el.classList.contains("jwPopup-eventAttached")){
+        document.getElementById(jwPopup_background_id).addEventListener("click",function(e){
+            if(e.currentTarget.classList.contains("jwPopup-background")){
+                document.getElementById(element_id).jwPopup("hide");
+            }
+        });
+        var jwPopupCloseList = $el.getElementsByClassName("jwPopupClose");
+        for(var i=0;i<jwPopupCloseList.length;i++){
+            jwPopupCloseList[i].addEventListener("click",function(e){
+                document.getElementById(element_id).jwPopup("hide");
+            });
+        }
+        $el.classList.add("jwPopup-eventAttached")
+    }
     if(options=='show'){
+        var shown_container_arr = document.querySelectorAll(".jwPopup-container.show");
+        var max_z_index=1050;
+        for(var i=0;i<shown_container_arr.length;i++){
+            if(max_z_index<shown_container_arr[i].style.zIndex){
+                max_z_index=shown_container_arr[i].style.zIndex;
+            }
+        }
+        if(shown_container_arr.length>0){
+            document.getElementById(jwPopup_containder_id).style.zIndex=max_z_index+2;
+            document.getElementById(element_id).style.zIndex=max_z_index+2;
+            document.getElementById(jwPopup_background_id).style.zIndex=max_z_index+1;
+        }
+        else{
+            document.getElementById(jwPopup_containder_id).style.zIndex=1052;
+            document.getElementById(element_id).style.zIndex=1052;
+            document.getElementById(jwPopup_background_id).style.zIndex=1051;
+        }
         document.getElementById(jwPopup_containder_id).classList.add("show");
     }
     else if(options == 'hide'){
-        document.getElementById(jwPopup_containder_id).classList.remove("show");
+        if(typeof document.getElementById(element_id).close_reload !== 'undefined' && document.getElementById(element_id).close_reload){
+            location.reload();
+        }
+        else{
+            document.getElementById(jwPopup_containder_id).classList.remove("show");
+        }
     }
     if(typeof options =='object'){
         if(typeof options.show !== 'undefined' && options.show){
+            var shown_container_arr = document.querySelectorAll(".jwPopup-container.show");
+            var max_z_index=1050;
+            for(var i=0;i<shown_container_arr.length;i++){
+                if(max_z_index<shown_container_arr[i].style.zIndex){
+                    max_z_index=shown_container_arr[i].style.zIndex;
+                }
+            }
+            if(shown_container_arr.length>0){
+                document.getElementById(jwPopup_containder_id).style.zIndex=max_z_index+2;
+                document.getElementById(element_id).style.zIndex=max_z_index+2;
+                document.getElementById(jwPopup_background_id).style.zIndex=max_z_index+1;
+            }
             document.getElementById(jwPopup_containder_id).classList.add("show");
         }
         else if(typeof options.show !== 'undefined' && !options.show){
@@ -99,4 +137,20 @@ window.addEventListener("load",function(){
             document.getElementById(element_id).jwPopup('show');
         });
     }
+    document.addEventListener("keyup",function(e){
+        if(e.key=='Escape'){
+            var max_i=-1;
+            var max_z_index=1050;
+            var shown_container_arr = document.querySelectorAll(".jwPopup-container.show");
+            for(var i=0;i<shown_container_arr.length;i++){
+                if(max_z_index<=shown_container_arr[i].style.zIndex){
+                    max_z_index=shown_container_arr[i].style.zIndex;
+                    max_i=i;
+                }
+            }
+            if(max_i!=-1){
+                shown_container_arr[max_i].querySelector(".jwPopup").jwPopup("hide");
+            }
+        }
+    });
 });
