@@ -58,6 +58,9 @@
     border-radius: 5px;
     letter-spacing: -1px;
 }
+.jwPopup:not(.jwPopup-setted){
+    display:none;
+}
 .jwPopup-small-width{
     max-width: 350px;
 }
