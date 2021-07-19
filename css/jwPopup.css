@@ -52,11 +52,13 @@
     background-color: #Fff;
     position:relative;
     top: 50%;
-    transform: translate(0,-50%);
     margin: 0 auto;
     z-index: 1050;
     border-radius: 5px;
     letter-spacing: -1px;
+}
+.jwPopup:not(.jwPopup-no-transform){
+    transform: translate(0,-50%);
 }
 .jwPopup:not(.jwPopup-setted){
     display:none;

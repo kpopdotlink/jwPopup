@@ -117,6 +117,17 @@ Element.prototype.jwPopup = function(options){
             $el.classList.remove("jwPopup-medium-height","jwPopup-small-height","jwPopup-large-height");
             $el.style.height=parseInt(options.height)+"px";
         }
+        if(typeof options.position == 'object'){
+            if(typeof options.position.x !=='undefined' || !isNaN(parseInt(options.position.x))){
+                $el.style.left=parseInt(options.position.x)+"px";
+                $el.style.margin="0";
+            }
+            if(typeof options.position.y !=='undefined' || !isNaN(parseInt(options.position.y))){
+                $el.style.top=parseInt(options.position.y)+"px";
+                $el.style.margin="0";
+                $el.classList.add("jwPopup-no-transform");
+            }
+        }
     }
 }
 window.addEventListener("load",function(){
