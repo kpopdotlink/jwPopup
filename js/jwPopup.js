@@ -57,6 +57,9 @@ Element.prototype.jwPopup = function(options){
         document.getElementById(jwPopup_containder_id).classList.add("show");
     }
     else if(options == 'hide'){
+        if(typeof $el.close_event =='function'){
+            document.getElementById(element_id).close_event();
+        }
         if(typeof document.getElementById(element_id).close_reload !== 'undefined' && document.getElementById(element_id).close_reload){
             location.reload();
         }
@@ -81,6 +84,12 @@ Element.prototype.jwPopup = function(options){
             document.getElementById(jwPopup_containder_id).classList.add("show");
         }
         else if(typeof options.show !== 'undefined' && !options.show){
+            if(typeof document.getElementById(element_id).close_event =='function'){
+                document.getElementById(element_id).close_event();
+            }
+            if(typeof document.getElementById(element_id).close_reload !== 'undefined' && document.getElementById(element_id).close_reload){
+                location.reload();
+            }
             document.getElementById(jwPopup_containder_id).classList.remove("show");
         }
         if(typeof options.width == "string" && options.width.toLowerCase().indexOf("px")==-1 && isNaN(parseInt(options.width))){
@@ -127,6 +136,9 @@ Element.prototype.jwPopup = function(options){
                 $el.style.margin="0";
                 $el.classList.add("jwPopup-no-transform");
             }
+        }
+        if(typeof options.close_event =='function'){
+            document.getElementById(element_id).close_event = options.close_event;
         }
     }
 }
