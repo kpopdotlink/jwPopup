@@ -57,9 +57,6 @@ Element.prototype.jwPopup = function(options){
         document.getElementById(jwPopup_containder_id).classList.add("show");
     }
     else if(options == 'hide'){
-        if(typeof $el.close_event =='function'){
-            document.getElementById(element_id).close_event();
-        }
         if(typeof document.getElementById(element_id).close_reload !== 'undefined' && document.getElementById(element_id).close_reload){
             location.reload();
         }
@@ -84,12 +81,6 @@ Element.prototype.jwPopup = function(options){
             document.getElementById(jwPopup_containder_id).classList.add("show");
         }
         else if(typeof options.show !== 'undefined' && !options.show){
-            if(typeof document.getElementById(element_id).close_event =='function'){
-                document.getElementById(element_id).close_event();
-            }
-            if(typeof document.getElementById(element_id).close_reload !== 'undefined' && document.getElementById(element_id).close_reload){
-                location.reload();
-            }
             document.getElementById(jwPopup_containder_id).classList.remove("show");
         }
         if(typeof options.width == "string" && options.width.toLowerCase().indexOf("px")==-1 && isNaN(parseInt(options.width))){
@@ -137,8 +128,21 @@ Element.prototype.jwPopup = function(options){
                 $el.classList.add("jwPopup-no-transform");
             }
         }
-        if(typeof options.close_event =='function'){
-            document.getElementById(element_id).close_event = options.close_event;
+        if(typeof options.tab =='number' || (typeof options.tab=='string' && !isNaN(parseInt(options.tab)))){
+            var $tab_items = $el.querySelectorAll('.jwPopup-tab-item');
+            for(var i=0;i<$tab_items.length;i++){
+                $tab_items[i].classList.remove('show');
+                if(i==parseInt(options.tab)){
+                    $tab_items[i].classList.add('show');
+                }
+            }
+            var $tab_list_items = $el.querySelectorAll('.jwPopup-tab-list-item');
+            for(var i=0;i<$tab_list_items.length;i++){
+                $tab_list_items[i].classList.remove('active');
+                if(i==parseInt(options.tab)){
+                    $tab_list_items[i].classList.add('active');
+                }
+            }
         }
     }
 }

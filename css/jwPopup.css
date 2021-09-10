@@ -173,4 +173,30 @@ button.jw-popup-close{
 }
 .jw-alert-txt{
     font-size: 13px;
+}
+.jwPopup-tab-container{
+    padding: 20px;
+}
+.jwPopup-tab-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 } 
+.jwPopup-tab-list-item{
+    background-color: #fff;
+    color: #484848;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #bfbfbf;
+}
+.jwPopup-tab-list-item.active{
+    background-color:#0e8cf9;
+    border: none;
+    color: #fff;
+}
+.jwPopup-tab-item{
+    padding: 20px 20px 0 20px;
+}
+.jwPopup-tab-item:not(.show){
+    display:none;
+}
