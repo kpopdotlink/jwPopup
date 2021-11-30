@@ -68,7 +68,7 @@
     max-width: 350px;
 }
 .jwPopup-medium-width{
-    max-width: 650px;
+    max-width: 500px;
 }
 .jwPopup-large-width{
     max-width: 950px;
@@ -171,6 +171,27 @@ button.jw-popup-close{
     background-color: rgb(240, 12, 80);
     color: #fff;
 }
+.jw-submit-edit-btn{
+    font-size: 15px;
+    border: 1px solid #3169c3;
+    padding: 6px 35px;
+    border-radius: 5px;
+    background: #3169c3;
+    color: #fff;
+}
+.jw-submit-edit-btn:disabled{
+    background-color:#c3c3c3;
+    border:1px solid #555;
+}
+.jw-st-calc-popup-add{
+    font-size: 15px;
+    border: 1px solid #f43659;
+    padding: 6px 35px;
+    border-radius: 5px;
+    background: #f43659;
+    color: #fff;
+    margin-top: 14px;
+}
 .jw-alert-txt{
     font-size: 13px;
 }
@@ -199,4 +220,29 @@ button.jw-popup-close{
 }
 .jwPopup-tab-item:not(.show){
     display:none;
+}
+.jw-popup-form-control{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.jw-popup-form-control:last-child{
+    margin-bottom: 0;
+}
+.jw-popup-form-control-label{
+    font-size: 13px;
+}
+.jw-popup-form-control-input{
+    padding: 6px;
+    font-size: 12px;
+    width: 100%;
+    border: 1px solid #b5b5b5;
+    border-radius: 5px;
+}
+.jw-popup-form-control-select{
+    padding: 6px;
+    font-size: 12px;
+    width: 100%;
+    border: 1px solid #b5b5b5;
+    border-radius: 5px;
 }

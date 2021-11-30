@@ -60,6 +60,9 @@ Element.prototype.jwPopup = function(options){
         if(typeof document.getElementById(element_id).close_reload !== 'undefined' && document.getElementById(element_id).close_reload){
             location.reload();
         }
+    else if(typeof document.getElementById(element_id).close_url !== 'undefined' && document.getElementById(element_id).close_url){
+            location.href=document.getElementById(element_id).close_url;
+        }
         else{
             document.getElementById(jwPopup_containder_id).classList.remove("show");
         }
