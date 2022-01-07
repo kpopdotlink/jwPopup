@@ -12,6 +12,10 @@
     margin:0;
     color:#000;
 }
+.jwPopup-container.jwPopup-nobackground{
+    width:initial;
+    height:initial;
+}
 .jwPopup-container:not(.show){
     opacity:0;
     visibility:hidden;
@@ -49,6 +53,9 @@
 .jwPopup-container.show > .jwPopup-background{
     opacity: .5;
 }
+.jwPopup-container.show.jwPopup-nobackground > .jwPopup-background{
+    display:none;
+}
 .jwPopup{
     background-color: #Fff;
     position:relative;
@@ -57,6 +64,9 @@
     z-index: 1050;
     border-radius: 5px;
     letter-spacing: -1px;
+}
+.jwPopup:not(.jwPopup-no-transform).jwPopup-nobackground{
+    transform:initial;
 }
 .jwPopup:not(.jwPopup-no-transform){
     transform: translate(0,-50%);
