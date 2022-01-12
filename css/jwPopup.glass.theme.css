@@ -1,0 +1,72 @@
+.jwPopup-glass-theme .jwPopup{
+    background: rgba(255,255,255,0.2);
+    border-radius: 2rem;
+    color:#666;
+    border: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.6);
+    border-left: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 5px 5px 30px rgb(0 0 0 / 46%);
+}
+.jwPopup-glass-theme .jwPopup-background{
+    background-color: #fff;
+    opacity:0;
+}
+.jwPopup-container.show.jwPopup-glass-theme > .jwPopup-background {
+    opacity: 0.2;
+}
+.jwPopup-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+}
+.jwPopup-glass-theme .jw-popup-header{
+    background-color:rgba(255,255,255,0);
+    border-bottom:1px solid #fff;
+    display:flex;
+}
+.jwPopup-glass-theme .jw-popup-footer{
+    background-color: rgba(255,255,255,0.5);
+    border-radius: inherit;
+    box-shadow: -5px -5px 30px rgb(255 255 255 / 50%);
+    border-top:1px solid #fff;
+    border-left:1px solid #fff;
+}
+.jwPopup-glass-theme .jw-popup-header-title{
+    color:#444;
+    font-weight: 750;
+    flex-grow:1;
+    text-align:center;
+}
+.jwPopup-glass-theme .jw-popup-footer .jw-footer-btn button{
+    padding:1rem 2rem;
+    border-radius:1rem;
+}
+.jwPopup-glass-theme .jw-popup-header-button-list{
+    display:inline-flex;
+    padding:0 1rem;
+}
+.jwPopup-glass-theme i.jw-glass-btn{
+    height:13px;
+    width:13px;
+    margin:4px;
+    border-radius:50%;
+    cursor:pointer;
+}
+.jwPopup-glass-theme i.jw-glass-btn.jw-close-btn{
+    background-color:#f45450;
+    border:2px solid #b61a13;
+}
+.jwPopup-glass-theme i.jw-glass-btn.jw-minimize-btn{
+    background-color:#f5b63e;
+    border:2px solid #d69a36;
+}
+.jwPopup-glass-theme i.jw-glass-btn.jw-maximize-btn{
+    background-color:#31c146;
+    border:2px solid #16a129;
+}

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             html, body{
                 width:100%;
@@ -8,48 +9,78 @@
                 padding:0;
                 margin:0;
             }
+            body.jwPopup-glass-theme-body{
+                background: linear-gradient(217deg, rgba(205, 26, 241, 0.8), rgba(205, 26, 241, 0) 70.71%),
+                            linear-gradient(127deg, rgba(243, 236, 31, 0.8), rgba(243,236,31,0) 70.71%),
+                            linear-gradient(336deg, rgba(4, 0, 255, 0.8), rgba(75,0,255,0) 70.71%);
+            }
+            .jwPopup-glass-theme .jw-popup-header-title{
+                padding-right:107px;
+            }
+            .container{
+                height:calc(100% - 180px);
+            }
+            #jwPopupMinimized{
+                height:60px;
+            }
+            .footer{
+                height:70px;
+            }
+            .header{
+                height:50px;
+            }
         </style>
         <link rel="stylesheet" href="./css/jwPopup.css" />
+        <link rel="stylesheet" href="./css/jwPopup.glass.theme.css" />
         <script src="./js/jwPopup.js"></script>
     </head>
-    <body>
-        <div id="testModal" class="jwPopup">
-            <div class="jw-popup-header">
-                <div class="jw-popup-header-title">모달제목</div>
-                <button type='button' class="jwPopupClose jw-popup-close"><img src="./images/icon_close_w.png" class="jw-icon-close jwPopupClose"></button>
-            </div>
-            <div class="jw-popup-body">
-                <div class="jw-popup-form">
-                    <div class="jw-popup-FormCol">입력창제목</div>
-                    <div class="jw-popup-FormInput"><input type="text" class=""></div>
-                    <div class="jw-popup-FormCol">입력창제목</div>
-                    <div class="jw-popup-FormInput"><input type="text" class=""></div>
-                    <div class="jw-popup-FormCol">입력창제목</div>
-                    <div class="jw-popup-FormInput"><input type="text" class=""></div>
-                    <div class="jw-popup-FormCol">입력창제목</div>
-                    <div class="jw-popup-FormInput"><input type="text" class=""></div>
-                    <div class="jw-popup-FormCol">입력창제목</div>
-                    <div class="jw-popup-FormInput"><input type="text" class=""></div>
-                    <div class="jw-popup-FormCol">입력창제목</div>
-                    <div class="jw-popup-FormInput"><input type="text" class=""></div>
-                    <div class="jw-popup-FormCol">입력창제목</div>
-                    <div class="jw-popup-FormInput"><input type="text" class=""></div>
-                    <div class="jw-popup-FormCol">입력창제목</div>
-                    <div class="jw-popup-FormInput"><input type="text" class=""></div>
-                    <div class="jw-popup-FormCol">입력창제목</div>
-                    <div class="jw-popup-FormInput"><input type="text" class=""></div>
-                </div>
-            </div>
-            <div class="jw-popup-footer">
-                <div class="jw-footer-btn">
-                    <button type='button' class="jw-popup-cancel">취소</button>
-                    <button type='button' class="jw-popup-ok">확인</button>
-                    <button type='button' class="jw-popup-x">닫기</button>
-                </div>
-            </div>
+    <body class="jwPopup-glass-theme-body">
+        <div class="header">
 
         </div>
-        <button type="button" class="jwPopupOpen jw-popup-btn" jw-target="testModal">모달열기</button>
+        <div class="container jw-popup-container">
+            <div id="testModal" class="jwPopup" data-draggable="y" data-theme="jwPopup-glass-theme" data-resizable="true" data-minimizable="true" data-autoClose='false'>
+                <div class="jw-popup-header">
+                    <div class="jw-popup-header-button-list">
+                        <i class="jw-glass-btn jw-close-btn jwPopupClose"></i>
+                        <i class="jw-glass-btn jw-minimize-btn jwPopupMinimize"></i>
+                        <i class="jw-glass-btn jw-maximize-btn jwPopupMaximize"></i>
+                    </div>
+                    <div class="jw-popup-header-title">모달제목</div>
+                </div>
+                <div class="jw-popup-body">
+                    <div class="jw-popup-form">
+                        <div class="jw-popup-FormCol">입력창제목</div>
+                        <div class="jw-popup-FormInput"><input type="text" class=""></div>
+                        <div class="jw-popup-FormCol">입력창제목</div>
+                        <div class="jw-popup-FormInput"><input type="text" class=""></div>
+                        <div class="jw-popup-FormCol">입력창제목</div>
+                        <div class="jw-popup-FormInput"><input type="text" class=""></div>
+                        <div class="jw-popup-FormCol">입력창제목</div>
+                        <div class="jw-popup-FormInput"><input type="text" class=""></div>
+                        <div class="jw-popup-FormCol">입력창제목</div>
+                        <div class="jw-popup-FormInput"><input type="text" class=""></div>
+                        <div class="jw-popup-FormCol">입력창제목</div>
+                        <div class="jw-popup-FormInput"><input type="text" class=""></div>
+                        <div class="jw-popup-FormCol">입력창제목</div>
+                        <div class="jw-popup-FormInput"><input type="text" class=""></div>
+                        <div class="jw-popup-FormCol">입력창제목</div>
+                        <div class="jw-popup-FormInput"><input type="text" class=""></div>
+                        <div class="jw-popup-FormCol">입력창제목</div>
+                        <div class="jw-popup-FormInput"><input type="text" class=""></div>
+                    </div>
+                </div>
+                <div class="jw-popup-footer">
+                    <div class="jw-footer-btn">
+                        <button type='button' class="jw-popup-cancel jwPopupClose">취소</button>
+                        <button type='button' class="jw-popup-ok">확인</button>
+                        <button type='button' class="jw-popup-x jwPopupClose">닫기</butto n>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="jwPopupOpen jw-popup-btn" jw-target="testModal">모달열기</button>
+        </div>
+        <div class="footer jwFooter-Container"></div>
         <script>
             //Size Property : small, medium, large
             document.getElementById("testModal").jwPopup({width:'medium',height:'medium'});
